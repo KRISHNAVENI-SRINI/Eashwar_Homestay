@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Book Room</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    max-width:700px;
+    margin:auto;
+    padding:30px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+button{
+    background:green;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Book Room {{ room_no }}</h1>
+
+<h3>{{ bed_count }}</h3>
+
+<form action="/save-booking" method="post">
+
+    <input
+        type="hidden"
+        name="room_number"
+        value="{{ room_no }}">
+
+    <label>Guest Name</label>
+    <input type="text" name="guest_name" required>
+
+    <label>Mobile Number</label>
+    <input type="text" name="mobile" required>
+
+    <label>Address</label>
+    <textarea name="address"></textarea>
+
+    <label>Aadhaar Number</label>
+    <input type="text" name="aadhaar">
+
+    <label>Vehicle Number</label>
+    <input type="text" name="vehicle_number">
+
+    <label>Check-In Date</label>
+    <input type="date" name="checkin_date">
+
+    <label>Check-Out Date</label>
+    <input type="date" name="checkout_date">
+
+    <label>Number Of Guests</label>
+    <input type="number" name="guest_count">
+
+    <button type="submit">
+        Save Booking
+    </button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Guest Details</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            max-width:800px;
+            margin:auto;
+            padding:30px;
+        }
+
+        .card{
+            border:1px solid #ddd;
+            padding:25px;
+            border-radius:10px;
+        }
+
+        .row{
+            margin-bottom:12px;
+        }
+
+        .label{
+            font-weight:bold;
+        }
+
+        .checkout-btn{
+            background:red;
+            color:white;
+            padding:12px 20px;
+            text-decoration:none;
+            border-radius:6px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Guest Details</h1>
+
+<div class="card">
+
+    <div class="row">
+        <span class="label">Room:</span>
+        {{ booking["room_number"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Guest Name:</span>
+        {{ booking["guest_name"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Mobile:</span>
+        {{ booking["mobile"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Address:</span>
+        {{ booking["address"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Aadhaar:</span>
+        {{ booking["aadhaar"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Vehicle:</span>
+        {{ booking["vehicle_number"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Check-In:</span>
+        {{ booking["checkin_date"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Check-Out:</span>
+        {{ booking["checkout_date"] }}
+    </div>
+
+    <div class="row">
+        <span class="label">Guest Count:</span>
+        {{ booking["guest_count"] }}
+    </div>
+
+    <br>
+
+    <a href="/checkout/{{ booking['id'] }}"
+       class="checkout-btn">
+       Check Out Guest
+    </a>
+
+</div>
+
+<br>
+
+<a href="/">Back To Dashboard</a>
+
+</body>
+</html>
